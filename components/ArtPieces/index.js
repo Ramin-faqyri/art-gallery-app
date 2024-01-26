@@ -2,7 +2,7 @@ import useSWR from "swr";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-export default function ArtPieces() {
+export default function ArtPieces({ pieces }) {
   const URL = `https://example-apis.vercel.app/api/art`;
 
   const { data: artworks, error, isLoading } = useSWR(URL, fetcher);
