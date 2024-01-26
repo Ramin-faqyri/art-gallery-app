@@ -1,23 +1,16 @@
-import useSWR from "swr";
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import ArtPiecePreview from "../ArtPiecePreview";
 
 export default function ArtPieces({ pieces }) {
-  const URL = `https://example-apis.vercel.app/api/art`;
-
-  const { data: artworks, error, isLoading } = useSWR(URL, fetcher);
-
-  if (isLoading || !artworks) return <p>is loading...</p>;
-  if (error) return <p>error</p>;
-  console.log(artworks);
-
   return (
     <ul>
-      {artworks.map((artwork) => {
+      {pieces.map((piece) => {
         return (
-          <li key={artwork.slug}>
-            {artwork.name}
-            by {artwork.artist}
+          <li key={piece.slug}>
+            <ArtPiecePreview
+              image={piece.imageSource}
+              title={piece.name}
+              artist={piece.artist}
+            />
           </li>
         );
       })}
