@@ -1,14 +1,23 @@
-import { artworks } from "@/components/ArtPieces/index.js";
-import Image from "next";
+import Image from "next/image";
+import styled from "styled-components";
 
 export default function ArtPiecePreview({ image, title, artist }) {
-  const imgSrc = image.src;
-  console.log(image);
+  console.log("url", { image });
   return (
     <>
       <h1>{title}</h1>
       <p>{artist}</p>
-      <Image src={imgSrc} />
+      <Image
+        src={image}
+        width={100}
+        height={100}
+        style={{ width: "300px", height: "auto" }}
+      />
+      <img src={image} width={300}></img>
     </>
   );
 }
+// img ist eigentlich nicht gewuencht. Next will eigentlich eine Next-Image-Komponente Image
+//       <img src={image} width={300}></img>
+// - musste in next.config ergänzt werden, wegen remote bildern von ext server
+// - Image Module von next war falsch importiert
