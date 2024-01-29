@@ -9,11 +9,10 @@ export default function ArtPiecePreview({ image, title, artist }) {
       <p>{artist}</p>
       <Image
         src={image}
-        width={100}
-        height={100}
+        width={300}
+        height={300}
         style={{ width: "300px", height: "auto" }}
       />
-      <img src={image} width={300}></img>
     </>
   );
 }
