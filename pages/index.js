@@ -1,5 +1,6 @@
 import ArtPieces from "@/components/ArtPieces";
 import useSWR from "swr";
+import Spotlight from "@/components/Spotlight";
 
 export default function HomePage() {
   const URL = `https://example-apis.vercel.app/api/art`;
@@ -10,9 +11,17 @@ export default function HomePage() {
   if (error) return <p>error</p>;
   console.log(artworks);
 
+  const randomArtPiece = artworks
+    ? artworks[Math.floor(Math.random() * artworks.length)]
+    : null;
+
   return (
     <div>
-      <h1>Hello from Niko,Nicole and Ramin</h1>
+      <h1>Art Gallery App</h1>
+      <Spotlight
+        image={randomArtPiece.imageSource}
+        artist={randomArtPiece.artist}
+      />
       <ArtPieces pieces={artworks} />
     </div>
   );
