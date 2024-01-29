@@ -1,6 +1,5 @@
 import Spotlight from "@/components/Spotlight";
-import ArtPieces from "@/components/ArtPieces";
-import Link from "next/link";
+import Navigation from "@/components/Navigation";
 
 export default function HomePage({ artworks }) {
   const randomArtPiece = artworks
@@ -11,7 +10,7 @@ export default function HomePage({ artworks }) {
     <div>
       <h1>Art Gallery App</h1>
       <nav>
-        <Link href="/art-pieces">Art-Pieces</Link>
+        <Navigation />
       </nav>
       {randomArtPiece && (
         <Spotlight
