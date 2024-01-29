@@ -1,10 +1,11 @@
 import ArtPieces from "@/components/ArtPieces";
-import { artworks } from "@/pages/index.js";
 
-export default function ArtpiecesPage() {
+export default function ArtPiecesPage({ artworks }) {
+  console.log("artPiecesPage", artworks);
   return (
     <div>
       <h1>Art Gallery App</h1>
+      <p>list of all art-pieces</p>
       <ArtPieces pieces={artworks} />
     </div>
   );
