@@ -1,3 +1,3 @@
 import { atom } from "jotai";
 
-const likedArtworkAtom = atom(0);
+export const likedArtworkAtom = atom(0);
