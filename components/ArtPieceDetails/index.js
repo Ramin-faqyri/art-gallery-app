@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { FavoriteButton } from "../FavoriteButton";
 
 export function ArtPieceDetails({ imageSource, title, artist, year, genre }) {
   console.log(imageSource);
@@ -8,6 +9,7 @@ export function ArtPieceDetails({ imageSource, title, artist, year, genre }) {
   return (
     <>
       <DetailsBox>
+        <FavoriteButton />
         <ArtPieceDetailImage
           src={imageSource}
           width={300}
@@ -15,6 +17,7 @@ export function ArtPieceDetails({ imageSource, title, artist, year, genre }) {
           //style={{ width: "300px", height: "auto" }}
           //fill={true}
         />
+
         <DetailsInfoBox>
           <p>
             Title:

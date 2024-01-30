@@ -1,5 +1,6 @@
 import ArtPiecePreview from "../ArtPiecePreview";
 import Link from "next/link";
+import { FavoriteButton } from "../FavoriteButton";
 
 export default function ArtPieces({ pieces }) {
   return (
@@ -13,6 +14,7 @@ export default function ArtPieces({ pieces }) {
                 title={piece.name}
                 artist={piece.artist}
               />
+              <FavoriteButton />
             </Link>
           </li>
         );

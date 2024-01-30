@@ -14,12 +14,16 @@ const nextConfig = {
     return config;
   },
   images: {
+    domains: ["example-apis.vercel.app"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "example-apis.vercel.app",
       },
     ],
+  },
+  experimental: {
+    swcPlugins: [["@swc-jotai/react-refresh", {}]],
   },
 };
 
