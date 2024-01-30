@@ -13,12 +13,12 @@ export default function ArtPiecesDetailRender({ artworks }) {
   if (!selectedArtwork) {
     return null;
   }
-  const { imageSource, title, artist, year, genre } = selectedArtwork;
+  const { imageSource, name, artist, year, genre } = selectedArtwork;
   return (
     <>
       <ArtPieceDetails
         imageSource={imageSource}
-        title={title}
+        title={name}
         artist={artist}
         year={year}
         genre={genre}
