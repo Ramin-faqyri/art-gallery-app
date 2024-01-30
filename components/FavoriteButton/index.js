@@ -4,7 +4,7 @@ import HeartIcon from "@/public/heart.svg";
 export function FavoriteButton() {
   return (
     <>
-      <StyledFavoriteButton>
+      <StyledFavoriteButton OnClick={}>
         <HeartIconStyled />
       </StyledFavoriteButton>
     </>
