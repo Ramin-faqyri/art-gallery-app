@@ -34,7 +34,7 @@ const StyledFavoriteButton = styled.button`
   background-color: transparent;
   border: 2px black;
   position: absolute;
-  right: 34vw;
+  right: 30vw;
   top: 31vh;
   width: 3rem;
   cursor: pointer;

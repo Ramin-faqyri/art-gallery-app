@@ -16,6 +16,7 @@ export function ArtPieceDetails({ imageSource, title, artist, year, genre }) {
           //style={{ width: "300px", height: "auto" }}
           //fill={true}
         />
+        <FavoriteButton />
 
         <DetailsInfoBox>
           <p>
