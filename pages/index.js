@@ -9,9 +9,7 @@ export default function HomePage({ artworks }) {
   return (
     <div>
       <h1>Art Gallery App</h1>
-      <nav>
-        <Navigation />
-      </nav>
+      <Navigation />
       {randomArtPiece && (
         <Spotlight
           image={randomArtPiece.imageSource}

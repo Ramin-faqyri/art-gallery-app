@@ -9,7 +9,6 @@ export function ArtPieceDetails({ imageSource, title, artist, year, genre }) {
   return (
     <>
       <DetailsBox>
-        <FavoriteButton />
         <ArtPieceDetailImage
           src={imageSource}
           width={300}

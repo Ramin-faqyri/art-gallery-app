@@ -1,4 +1,5 @@
 import { ArtPieceDetails } from "@/components/ArtPieceDetails";
+import Navigation from "@/components/Navigation";
 import { useRouter } from "next/router";
 
 export default function ArtPiecesDetailRender({ artworks }) {
@@ -16,6 +17,7 @@ export default function ArtPiecesDetailRender({ artworks }) {
   const { imageSource, name, artist, year, genre } = selectedArtwork;
   return (
     <>
+      <Navigation />
       <ArtPieceDetails
         imageSource={imageSource}
         title={name}

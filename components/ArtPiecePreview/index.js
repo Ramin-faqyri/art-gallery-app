@@ -4,8 +4,8 @@ import styled from "styled-components";
 export default function ArtPiecePreview({ image, title, artist }) {
   console.log("url", { image });
   return (
-    <>
-      <h1>{title}</h1>
+    <StyledArtPreviewBox>
+      <h3>{title}</h3>
       <p>{artist}</p>
       <StyledImagePreview
         src={image}
@@ -13,7 +13,7 @@ export default function ArtPiecePreview({ image, title, artist }) {
         height={300}
         //style={{ width: "300px", height: "auto" }}
       />
-    </>
+    </StyledArtPreviewBox>
   );
 }
 
@@ -22,6 +22,17 @@ const StyledImagePreview = styled(Image)`
   height: auto;
   padding: 2rem;
   border-radius: 10px;
+  margin-bottom: 3rem;
+`;
+
+const StyledArtPreviewBox = styled.div`
+  border: 0 black;
+  border-radius: 12px;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 1.3rem;
+  text-align: center;
+
+  background-color: white;
 `;
 
 // img ist eigentlich nicht gewuencht. Next will eigentlich eine Next-Image-Komponente Image
