@@ -2,8 +2,9 @@ import GlobalStyle from "../styles";
 import { SWRConfig } from "swr";
 import useSWR from "swr";
 import { Layout } from "@/components/Layout";
-import { Provider, useAtom } from "jotai";
+import { Provider } from "jotai";
 import { artPiecesInfoAtom } from "@/states/atom.js";
+import { useAtom } from "jotai";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 // const [artPiecesInfo, setArtPiecesInfo] = useAtom(null);
