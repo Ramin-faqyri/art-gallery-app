@@ -15,8 +15,8 @@ export default function ArtPieces({ pieces }) {
                 title={piece.name}
                 artist={piece.artist}
               />
-              <FavoriteButton />
             </Link>
+            <FavoriteButton />
           </StyledList>
         );
       })}

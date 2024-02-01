@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import HeartIcon from "@/public/heart.svg";
 import { useAtom } from "jotai";
-import { likedArtworkAtom, isLikedAtom } from "@/pages/states/atom";
+import { likedArtworkCounterAtom, isLikedAtom } from "@/states/atom";
 
 // const onClick = () => setArtPiecesInfo((prev) => prev + 1);
 
 export function FavoriteButton() {
-  const [artPiecesInfo, setArtPiecesInfo] = useAtom(likedArtworkAtom);
+  const [likedArtworkCounter, setLikedArtworkCounter] = useAtom(
+    likedArtworkCounterAtom
+  );
   const [isLikedValue, setIsLikedValue] = useAtom(isLikedAtom);
 
   function handleOnClickFavoriteButton() {
-    setArtPiecesInfo((prev) => prev + 1);
-    //      onClick={() => setArtPiecesInfo((prev) => prev + 1)}
+    setLikedArtworkCounter((prev) => prev + 1);
+    //      onClick={() => setLikedArtwork((prev) => prev + 1)}
     handleToggleIsLiked();
   }
   function handleToggleIsLiked() {
@@ -23,8 +25,8 @@ export function FavoriteButton() {
   return (
     <>
       <StyledFavoriteButton type="button" onClick={handleOnClickFavoriteButton}>
-        <HeartIconStyled isLiked={isLikedValue} />
-        <span>{artPiecesInfo}</span>
+        <HeartIconStyled isLikedValue={isLikedValue} />
+        <span>{likedArtworkCounter}</span>
       </StyledFavoriteButton>
     </>
   );
@@ -41,8 +43,6 @@ const StyledFavoriteButton = styled.button`
 `;
 
 const HeartIconStyled = styled(HeartIcon)`
-  color: white;
-  background-color: transparent;
   path {
     fill: ${({ isLikedValue }) => {
       console.log("isLikedTrueOrFalse?", isLikedValue);
